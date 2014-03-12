@@ -22,8 +22,8 @@ module VersionFu
                             :foreign_key => versioned_foreign_key,
                             :dependent   => :destroy do
           def latest
-            find :first, :order=>'version desc'
-          end                    
+            order('version desc').first
+          end
         end
 
         before_save :check_for_new_version
