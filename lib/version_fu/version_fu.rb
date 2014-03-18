@@ -82,7 +82,7 @@ module VersionFu
 
   module InstanceMethods
     def find_version(number)
-      versions.find :first, :conditions=>{:version=>number}
+      versions.find_by_version(number)
     end
     
     def check_for_new_version
